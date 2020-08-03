@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Grid, GridRow, GridColumn, Container, Input, Search } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import Showfilm from './Showfilm/Showfilm';
-import {BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Film from './Film/Film';
-import axios from 'axios';
-import Searchf from './Searchf';
 import Bookmark from './Bookmark/Bookmark';
 
 
 
 function App() {
   const [name,setname]=useState('')
-  const [data,setdata]=useState('abc')
   function changeName(e){
     setname(e.target.value)
   }

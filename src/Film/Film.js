@@ -4,7 +4,6 @@ import { Grid, GridRow, GridColumn } from 'semantic-ui-react'
 import './Film.css'
 function Film(props){
     const [infor,setinfor]=useState({})
-    const [rate,setrate]=[0]
     console.log(props.match.params.name)
     useEffect(()=>{
         axios.get(`http://www.omdbapi.com/?i=${props.match.params.name}&apikey=6b52ef7b&key=6b52ef7b`)

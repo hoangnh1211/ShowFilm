@@ -11,7 +11,6 @@ function Showfilm(props){
     const [currentPage,setcurrentPage]=useState(1)
     const [newsPerPage]=useState(4)
     const [pageNumbers,setpageNumbers]=useState(1)
-    const []=useState([])
     let abc=props.location.hash;
     let abc1,length;
     var d=newsPerPage;
