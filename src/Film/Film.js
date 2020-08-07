@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
 import { Grid, GridRow, GridColumn } from 'semantic-ui-react'
 import './Film.css'
+import { callApidata } from '../Api/Api'
 function Film(props){
     const [infor,setinfor]=useState({})
-    console.log(props.match.params.name)
     useEffect(()=>{
-        axios.get(`http://www.omdbapi.com/?i=${props.match.params.name}&apikey=6b52ef7b&key=6b52ef7b`)
+        let id=props.match.params.name
+        callApidata(id,'i')
         .then(res=>{
             setinfor(res.data)
         })
+   
     },[])
 
     return(
@@ -18,7 +19,7 @@ function Film(props){
             <Grid>
                 <GridRow >
                     <GridColumn width={6}>
-                        <img src={infor.Poster}></img>    
+                        <img src={infor.Poster} alt={infor.Title}></img>    
                     </GridColumn>
                     <GridColumn width={2}></GridColumn>
                     <GridColumn width={8}>

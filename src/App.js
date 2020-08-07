@@ -5,25 +5,24 @@ import Showfilm from './Showfilm/Showfilm';
 import {BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Film from './Film/Film';
 import Bookmark from './Bookmark/Bookmark';
-
-
+require('dotenv').config()
 
 function App() {
-  const [name,setname]=useState('')
+  const [nameSearch,setnameSearch]=useState('')
   function changeName(e){
-    setname(e.target.value)
+    setnameSearch(e.target.value)
   }
-  function enter(){
-    localStorage.setItem('search',name)
-    setname('')
+  function search(){
+    localStorage.setItem('search',nameSearch)
+    setnameSearch('')
   }
     return (
       <Router>
         <Container className="app">
-          <input className="input" value={name} onChange={changeName}   placeholder='Search...'/>
-          <Link to='/search' onClick={enter}><button>tim kiem</button></Link>
+          <input className="input" value={nameSearch} onChange={changeName}   placeholder='Search...'/>
+          <Link to='/search' onClick={search}><button>tim kiem</button></Link>
           <Link to='/'><button>trang chu</button></Link>
-          <Link to='/bookmark' onClick={enter}><button>bookmark</button></Link>
+          <Link to='/bookmark' ><button>bookmark</button></Link>
           <Switch>
           <Route
               path="/"
@@ -61,4 +60,5 @@ function App() {
 }
 
 export default App;
+
 
