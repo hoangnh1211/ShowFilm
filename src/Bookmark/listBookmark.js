@@ -1,4 +1,4 @@
-import { types } from 'mobx-state-tree'
+import { types   } from 'mobx-state-tree'
 
 export const infor=types.model('infor',{
     Title:types.string,
@@ -10,7 +10,7 @@ export  const listBookmark=types.model({
     })
     .views((self) => ({
         get shop() {
-            return  (self.list)
+            return self.list.slice()
         }
     }))
     .actions( (self) => {
@@ -26,4 +26,4 @@ export  const listBookmark=types.model({
             changelist
         }
     })
-export const list=listBookmark.create()
+export const listfilm=listBookmark.create()

@@ -4,7 +4,7 @@ import FrameBookmark from './FrameBookmark'
 const ListframeBookmark=({list})=>(
     <Grid>
         {
-            list.list.map((infor,index)=><FrameBookmark infor={infor} key={index}/>)
+            list.map((infor,index)=><FrameBookmark infor={infor} key={index}/>)
         }
     </Grid>
 )
